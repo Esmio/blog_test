@@ -158,7 +158,7 @@
   }
 
   .logo {
-    width: 200px;
+    width: 192px;
     height: 96px;
     margin-left: -20px;
 

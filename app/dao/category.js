@@ -82,7 +82,7 @@ class CategoryDao {
         // 统计每个分类下有多少文章
         const ids = [];
         category.forEach(item => {
-            ids.push(item.id);
+            ids.push(item.id.toString());
         });
         const article = await CategoryDao._getArticle(ids);
 

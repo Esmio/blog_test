@@ -9,7 +9,7 @@ const {
 } = require('../config/config').database
 
 const sequelize = new Sequelize(dbName, user, password, {
-    dialect: 'mysql',
+    dialect: 'postgres',
     host,
     port,
     logging: true,

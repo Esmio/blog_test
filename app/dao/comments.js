@@ -26,7 +26,7 @@ class CommentsDao {
     static async destroyComments(id) {
         const comments = await Comments.findOne({
             where: {
-                id,
+                id: id.toString(),
                 deleted_at: null
             }
         });
@@ -41,7 +41,7 @@ class CommentsDao {
     static async getComments(id) {
         const comments = await Comments.scope('iv').findOne({
             where: {
-                id,
+                id: id.toString(),
                 deleted_at: null
             }
         });
@@ -100,7 +100,7 @@ class CommentsDao {
 
         const comments = await Comments.findAndCountAll({
             where: {
-                article_id,
+                article_id: article_id.toString(),
                 deleted_at: null
             },
             limit: pageSize,//每页10条

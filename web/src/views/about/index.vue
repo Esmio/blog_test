@@ -7,9 +7,9 @@
     </article>
     <article class="text">
       <p>
-        我叫梁凤波，职业是一名前端工程师，这个博客属于我的个人博客网站，同时也在 <a href="https://github.com/liangfengbo/nodejs-koa-blog" target="_blank">
+        我叫董晓明，职业是一名前端工程师，这个博客属于我的个人博客网站，同时也在 <a href="https://github.com/esmio" target="_blank">
         Github </a>开源了此项目代码，
-        我的名字后面有个“波”字，所以起名为：波博客 - <strong>boblog.com</strong>，我相信你肯定能很快记住这个域名，毕竟这个老域名是2001年注册的，那时我还没上学呢，我是从一个非常豪爽、耍酷、帅气的大叔购买得到的。
+        网站名称是我姓名的全拼 - <strong>dongxiaoming.com</strong>
       </p>
       <p class="content">博客的内容：积极向上的文章。</p>
       <p>博客的愿景：和更多的朋友一起学习进步。</p>
@@ -24,7 +24,7 @@
 <script>
   export default {
     created() {
-      document.title = `波博客 - boblog.com`
+      document.title = `晓明的博客 - dongxiaoming.com`
     }
   }
 </script>

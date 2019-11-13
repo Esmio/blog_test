@@ -71,8 +71,8 @@ class ArticleDao {
 
         const r = article.rows;
         r.forEach(article => {
-            articleIds.push(article.id);
-            categoryIds.push(article.category_id);
+            articleIds.push(article.id.toString());
+            categoryIds.push(article.category_id.toString());
         });
 
 
@@ -172,7 +172,7 @@ class ArticleDao {
     // 更新文章
     static async updateArticle(id, v) {
         // 查询文章
-        const article = await Article.findByPk(id);
+        const article = await Article.findByPk(id.toString());
         if (!article) {
             throw new global.errs.NotFound('没有找到相关文章');
         }
@@ -191,7 +191,7 @@ class ArticleDao {
     // 更新文章浏览次数
     static async updateArticleBrowse(id, browse) {
         // 查询文章
-        const article = await Article.findByPk(id);
+        const article = await Article.findByPk(id.toString());
         if (!article) {
             throw new global.errs.NotFound('没有找到相关文章');
         }
@@ -205,7 +205,7 @@ class ArticleDao {
     static async getArticleDetail(id) {
         const article = await Article.findOne({
             where: {
-                id
+                id: id.toString()
             }
         });
 

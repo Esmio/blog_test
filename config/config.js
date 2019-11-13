@@ -1,11 +1,11 @@
 module.exports = {
     environment: 'dev',
     database: {
-        dbName: 'boblog',
+        dbName: 'blog_test',
         host: 'localhost',
-        port: 3306,
-        user: 'root',
-        password: 'password'
+        port: 5432,
+        user: 'simon',
+        password: ''
     },
     security: {
         secretKey: "secretKey",
@@ -16,5 +16,10 @@ module.exports = {
         appId: '',
         appSecret: '',
         loginUrl: 'https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code'
+    },
+    qiniu: {
+        accessKey: 'hn9xExgpNGQ96OLfzrpPizqCjwODMGikpysjNx4z',
+        secretKey: 'JNaLKT6b_ad6X5wUxoB8zVOg0RWX3qmoZKhAIlQu',
+        scope: 'tripflow',
     }
 }

@@ -61,4 +61,17 @@ router.get('/auth', new Auth(AUTH_ADMIN).m, async (ctx) => {
     ctx.body = res.json(userInfo)
 })
 
+// 上传图片至七牛
+router.post('/upload/image', async (ctx) => {
+
+    const { key } = await AdminDao.uploadImage(ctx);
+
+    ctx.response.status = 200;
+    ctx.body = {
+        code: 200,
+        msg: '上传成功',
+        key,
+    }
+})
+
 module.exports = router

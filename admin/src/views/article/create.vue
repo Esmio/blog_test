@@ -18,7 +18,7 @@
             <Upload
               multiple
               type="drag"
-              action="http://up-z2.qiniu.com"
+              action="http://127.0.0.1:3000/v1/admin/upload/image"
               :show-upload-list="false"
               :on-success="uploadSuccess"
               :on-error="uploadError"
@@ -94,7 +94,7 @@
       }),
       // 上传图片成功
       uploadSuccess(response) {
-        const url = `http://cdn.boblog.com/${response.key}`;
+        const url = `http://q0pff9y3r.bkt.clouddn.com/${response.key}`;
         this.formValidate.cover = url;
         this.$Message.success('上传成功!');
       },
@@ -107,6 +107,7 @@
       async _getUploadToken() {
         try {
           const res = await getUploadToken();
+          console.log('---token---', res.token)
           this.token = res.token;
 
         } catch (e) {

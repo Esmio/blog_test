@@ -1,5 +1,9 @@
 const {Admin} = require('../models/admin')
 const bcrypt = require('bcryptjs')
+const qiniu = require('qiniu')
+const qiniuConfig = require('../../config/config').qiniu;
+const fs = require('fs');
+const path = require('path');
 
 // data access object
 class AdminDao {
@@ -63,6 +67,42 @@ class AdminDao {
         }
 
         return admin
+    }
+
+
+    // 上传图片
+    static async uploadImage(ctx) {
+        const { accessKey, secretKey, scope } = qiniuConfig;
+        const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
+        const options = {
+            scope,
+            expires: 7200,
+        };
+        const putPolicy = new qiniu.rs.PutPolicy(options);
+        const uploadToken = putPolicy.uploadToken(mac);
+        const config = new qiniu.conf.Config();
+        const formUploader = new qiniu.form_up.FormUploader(config);
+        const putExtra = new qiniu.form_up.PutExtra();
+        const { file } = ctx.request.files;
+        console.log('---file---', file, file.path);
+        const data = fs.readFileSync(file.path);
+        const base64str = Buffer.from(data, 'binary').toString('base64');
+        const bafferData = Buffer.from(base64str, 'base64');
+        const filename = Date.now() + path.extname(file.name).toLocaleLowerCase();
+        const result = await new Promise((resolve, reject) => {
+            formUploader.put(uploadToken, filename, bafferData, putExtra, (err, body, info) => {
+                if (err) {
+                    reject(err)
+                }
+                if (info.statusCode === 200) {
+                    console.log(body);
+                    resolve(body)
+                } else {
+                    reject('other error');
+                }
+            })
+        });
+        return result;
     }
 }
 

@@ -89,7 +89,7 @@
     created() {
       // 获取文章
       this.getArticle();
-      document.title = `波博客 - boblog.com`
+      document.title = `晓明的博客 - dongxiaoming.com`
     },
     methods: {
       ...mapActions({
