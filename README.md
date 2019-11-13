@@ -80,12 +80,6 @@ $ npm run dev
 3. 启动服务: npm run dev; 浏览器打开：http://localhost:8083/ 即可以访问。
 ```
 
-### 接口说明（重要）
-项目的所有接口文档都这里，可以逐个文档看。
-- [管理员接口文档说明](./doc/admin.md)
-- [文章接口文档说明](./doc/article.md)
-- [分类接口文档说明](./doc/category.md)
-- [评论接口文档说明](./doc/comments.md)
 
 ## License
 
