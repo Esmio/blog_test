@@ -1,8 +1,6 @@
-<p align="center"><a href="http://www.boblog.com" target="_blank" rel="noopener noreferrer"><img width="234" src="http://images.boblog.com/BOBLOG-03.png" alt="logo"></a></p>
-
 ## 这是个什么的项目？
 
-使用 Node.js + Koa2 + MySQL + Vue.js 实战开发一套完整个人博客项目网站。博客线上地址：[www.boblog.com](http://www.boblog.com)
+使用 Node.js + Koa2 + MySQL + Vue.js 实战开发一套完整个人博客项目网站。
 
 ## 解决了什么问题？
 - 服务端：使用 Node.js 的 Koa2 框架二次开发 Restful API。
@@ -40,7 +38,6 @@
 ## 如何使用和学习？
 
 ### 数据库
-启动项目前一定要在创建好 `boblog` 数据库。
 ```
 # 登录数据库
 $ mysql -uroot -p密码
@@ -50,7 +47,6 @@ $ CREATE DATABASE IF NOT EXISTS boblog DEFAULT CHARACTER SET utf8mb4 COLLATE utf
 ```
 
 ### 修改数据库配置
-请在 [|——config/config.js](https://github.com/liangfengbo/nodejs-koa-blog/blob/master/config/config.js) 文件下修改您本地的数据库名字（`boblog`）和数据库密码。
 
 ### 克隆项目
 首先使克隆项目，然后进入项目根目录使用命令安装包，最后命令启动项目，代码会根据模型自动创建数据库表的。
@@ -60,7 +56,7 @@ $ CREATE DATABASE IF NOT EXISTS boblog DEFAULT CHARACTER SET utf8mb4 COLLATE utf
 
 ```
 # 克隆项目代码
-$ git clone https://github.com/liangfengbo/nodejs-koa-blog.git
+$ git clone git@github.com:Esmio/blog_test.git
 
 # 进入koa项目根目录
 $ cd nodejs-koa-blog
@@ -95,10 +91,3 @@ $ npm run dev
 
 项目已实现管理员、权限管理、文章、分类、评论等接口，前端模板网站和后台管理系统。自己可以根据项目代码学习，可以到 postman 软件中测试API或学习。
 
-喜欢或对你有帮助的话，请你点一个星星 <strong style='color:red;'>star</strong> 鼓励我，或者您有更好的建议和意见，请提出来告知我，可以留言 [Issues](https://github.com/liangfengbo/nodejs-koa-blog/issues/new)。希望能够帮助到你学习！Thanks！
-
-[MIT](https://github.com/liangfengbo/nodejs-koa-blog/blob/master/LICENSE), by 梁凤波
-
-
-## 项目参考学习资料
-- [《纯正商业级应用－Node.js Koa2开发微信小程序服务端》](https://s.imooc.com/SHHXs2R), by 慕课网：7七月老师
