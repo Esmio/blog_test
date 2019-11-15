@@ -18,7 +18,7 @@
             <Upload
               multiple
               type="drag"
-              action="admin/upload/image"
+              action="http://esmio.cn:3000/v1/admin/upload/image"
               :show-upload-list="false"
               :on-success="uploadSuccess"
               :on-error="uploadError"
