@@ -18,7 +18,7 @@
             <Upload
               multiple
               type="drag"
-              action="http://127.0.0.1:3000/v1/admin/upload/image"
+              action="/admin/upload/image"
               :show-upload-list="false"
               :on-success="uploadSuccess"
               :on-error="uploadError"
