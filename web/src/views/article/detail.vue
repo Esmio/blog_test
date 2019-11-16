@@ -157,6 +157,9 @@
 </style>
 <style lang="scss">
   #article-detail {
+    & .markdown-body {
+      box-shadow: none !important;
+    }
     & .v-note-wrapper .v-note-panel {
       box-shadow: none !important;
     }
