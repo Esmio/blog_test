@@ -242,6 +242,10 @@
     width: 100%;
     box-sizing: border-box;
 
+    & .v-note-wrapper {
+      box-shadow: none!important;
+    }
+
     & .v-note-wrapper .v-note-panel {
       box-shadow: none !important;
     }
@@ -265,5 +269,9 @@
     .markdown-body {
       font-size: 18px !important;
     }
+  }
+  .mavon-editor--box {
+    box-shadow: none!important;
+    border: 1px solid #DCDFE6!important;
   }
 </style>

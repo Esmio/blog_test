@@ -160,6 +160,9 @@
     & .markdown-body {
       box-shadow: none !important;
     }
+    & .v-note-wrapper {
+      box-shadow: none !important;
+    }
     & .v-note-wrapper .v-note-panel {
       box-shadow: none !important;
     }
